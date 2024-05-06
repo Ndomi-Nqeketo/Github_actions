@@ -14,3 +14,17 @@ jobs:
         run: |
           npm -v
           node -v
+
+  package-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View SW Version
+        run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: [run-shell-command]
+    steps:
+      - name: echo a string
+        run: Write-OutPut "Windows String"
+      - name: Error Step
+        run: doesnotexists
