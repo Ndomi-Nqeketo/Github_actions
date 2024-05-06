@@ -1,0 +1,16 @@
+name: First Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello, world"
+      - name: echo multiple strings
+        run: |
+          npm -v
+          node -v
