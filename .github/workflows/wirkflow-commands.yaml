@@ -7,13 +7,13 @@ jobs:
   testing-wf-command:
     runs-on: ubuntu-latest
     steps:
-#      - name: Setting an error message
-#        run: echo "::error::Missing semicolon"
-#      - name: Setting an error message with param
-#        run: echo "::error title=Error title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
+      - name: Setting an error message
+        run: echo "::error::Missing semicolon"
+      - name: Setting an error message with param
+        run: echo "::error title=Error title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
       - name: Setting an debug message with param
-        run: echo "::error title=debug title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
+        run: echo "::debug title=Debug title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
       - name: Setting an warning message with param
-        run: echo "::error title=warning title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
+        run: echo "::warning title=Warning title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
       - name: Setting an notice message with param
-        run: echo "::error title=Notice title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
+        run: echo "::notice title=Notice title, file=app.js,line=10,endLine=20,col=15::Missing semicolon"
