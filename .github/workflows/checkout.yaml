@@ -5,6 +5,15 @@ on:
       - main
 
 jobs:
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files Before
+        run: ls -a
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: List Files
+        run: ls -a
   checkout-and-display-files:
     runs-on: ubuntu-latest
     steps:
