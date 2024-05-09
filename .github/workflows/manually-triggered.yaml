@@ -2,14 +2,27 @@ name: Manually Triggered
 on:
   workflow_dispatch:
     inputs:
-        string:
-            description: 'String to echo'
-            type: string
-            required: true
-            default: 'Default Value'
+      string:
+        description: "String to echo"
+        type: string
+        required: true
+        default: "Default Value"
+      number:
+        description: A number input
+        type: number
+        default: 42
+      options:
+        description: "An Options input"
+        required: true
+        default: "Option 3"
+        type: choice
+        options:
+          - Option 1
+          - Option 2
+          - Option 3
 
 jobs:
   log-info:
     runs-on: ubuntu-latest
     steps:
-        - run: echo $GITHUB_REF
+      - run: echo $GITHUB_REF
