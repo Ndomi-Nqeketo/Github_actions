@@ -1,6 +1,26 @@
 name: Repository Events
 on:
   push:
+    branches:
+      - main
+      - "feature/*" # matches feature/featA and feature/featB, does not match feature/fearA/
+      - "feature/**" # matches feature/featA and feature/featB, also matches feature/featA/
+      - "!feature/featA" # ignores feature/featA, does not ignore feature/featB
+
+    # branches-ignore:
+    #   - feature/feata # ignores feature/featA, does not ignore feature/featB
+
+    tags:
+      - v1.* # matches v1.0, v1.1, v1.2, v1.1.2 etc.
+      - "!v1.1.1"
+
+    paths: 
+      - "docs/**" # matches docs/README.md, docs/README.txt, docs/README.md.txt
+      - "docs/*" # matches docs/README.md, docs/README.txt, does not match docs/README.md.txt
+      - "docs/README.md" # matches docs/README.md, does not match docs/README.txt
+      - "docs/README.md.txt" # matches docs/README.md.txt, does not match docs/README.md
+      - "!docs/README.md" # ignores docs/README.md, does not ignore docs/README.txt
+      - "!docs/README.md.txt" # ignores docs/README.md.txt, does not ignore docs/README.md
   pull_request:
     types:
       - opened
