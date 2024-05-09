@@ -10,7 +10,6 @@ jobs:
       - name: Comment on New PRs
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}  // This is a secret
           script: |
             github.rest.issues.createComment({
              issue_number: context.issue.number,
