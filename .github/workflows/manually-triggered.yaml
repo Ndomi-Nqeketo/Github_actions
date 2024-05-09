@@ -35,4 +35,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo $GITHUB_REF
-            - run: echo "String ${{ inputs.string }}"
+            - run: |
+                echo "String ${{ inputs.string }}"
+                echo "Number ${{ inputs.number }}"
+                echo "Options ${{ inputs.options }}"
+                echo "Boolean ${{ inputs.boolean }}"
+                echo "Environment ${{ inputs.environment }}"
